@@ -224,7 +224,7 @@ class _CatalogoContenido extends StatelessWidget {
                     },
                     icon: Badge(
                       label: Text('$enCarrito'),
-                      isLabelVisible: enCarrito > 0,
+                      isLabelVisible: true,
                       child: const Icon(Icons.shopping_cart_outlined),
                     ),
                   ),

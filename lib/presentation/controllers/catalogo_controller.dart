@@ -6,8 +6,7 @@ import '../../domain/entities/producto.dart';
 import '../../domain/repositories/producto_repository.dart';
 
 class CatalogoController extends ChangeNotifier {
-  CatalogoController({required ProductoRepository repository})
-    : _repository = repository;
+  CatalogoController({required this._repository});
 
   static final Coordenada _origenPredeterminado = Coordenada(
     latitud: -16.52,
@@ -36,7 +35,9 @@ class CatalogoController extends ChangeNotifier {
   String? get categoriaSeleccionada => _categoriaSeleccionada;
 
   List<String> get categorias {
-    final unicas = <String>{for (final producto in _productos) producto.categoria};
+    final unicas = <String>{
+      for (final producto in _productos) producto.categoria,
+    };
     return List<String>.unmodifiable(unicas.toList()..sort());
   }
 
