@@ -50,3 +50,8 @@ app.*.map.json
 *.jks
 *.keystore
 /android/.kotlin/
+
+# Exclusión obligatoria de llaves criptográficas y credenciales de firma
+*.jks
+*.keystore
+**/android/key.properties
